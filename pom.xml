@@ -51,6 +51,13 @@
 			<artifactId>monte-screen-recorder</artifactId>
 			<version>0.7.7.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>2.0.0-alpha7</version>
+			<scope>test</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
@@ -59,11 +66,11 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
-	<build>
+  
+  <build> 
 		<pluginManagement><!-- lock down plugins versions to avoid using Maven 
 				defaults (may be moved to parent pom) -->
-			<plugins>
+			<plugins> 
 				<!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
 				<plugin>
 					<artifactId>maven-clean-plugin</artifactId>
@@ -80,7 +87,12 @@
 				</plugin>
 				<plugin>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.22.1</version>
+					<version>3.0.0-M7</version>
+					<configuration>
+					   <suiteXmlFiles>
+					      <suiteXmlFile>amaz.xml</suiteXmlFile>
+					   </suiteXmlFiles>
+					</configuration>
 				</plugin>
 				<plugin>
 					<artifactId>maven-jar-plugin</artifactId>
@@ -105,5 +117,5 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
-	</build>
+	</build> 
 </project>
